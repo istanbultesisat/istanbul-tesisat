@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="İstanbul Tesisat – 7/24 acil su tesisatı, tıkanıklık açma, kaçak tespiti. Hemen arayın: 0552 462 82 51"/>
+  <title>İstanbul Tesisat – 7/24 Acil Servis | 0552 462 82 51</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600;700;900&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --red: #e02020; --dark-red: #a80000;
+      --navy: #0b1a2e; --steel: #1c2f45;
+      --gold: #f5a623; --white: #ffffff;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Barlow', sans-serif; background: var(--navy); color: var(--white); overflow-x: hidden; }
+
+    /* TOPBAR */
+    .topbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      background: var(--red);
+      display: flex; align-items: center; justify-content: center; gap: 12px;
+      padding: 11px 20px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.5);
+    }
+    .topbar a { color: #fff; text-decoration: none; font-weight: 800; font-size: 1.05rem; letter-spacing: 1px; display: flex; align-items: center; gap: 10px; }
+    .pulse { width: 10px; height: 10px; background: #fff; border-radius: 50%; animation: pulse 1.5s infinite; }
+    @keyframes pulse { 0%,100%{ box-shadow: 0 0 0 0 rgba(255,255,255,0.7); } 50%{ box-shadow: 0 0 0 8px rgba(255,255,255,0); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh; padding-top: 56px;
+      background: linear-gradient(160deg, rgba(11,26,46,0.96) 55%, rgba(224,32,32,0.18) 100%),
+        url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80') center/cover no-repeat;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 80px 20px 100px; position: relative;
+    }
+    .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom, transparent, var(--navy)); }
+    .badge {
+      display: inline-block; background: var(--red); color: #fff;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+      padding: 6px 18px; border-radius: 3px; margin-bottom: 24px;
+      animation: fadeUp 0.6s ease both;
+    }
+    .hero h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(3rem, 11vw, 7rem); line-height: 1; letter-spacing: 2px;
+      animation: fadeUp 0.7s 0.1s ease both;
+    }
+    .hero h1 span { color: var(--red); }
+    .hero p {
+      margin-top: 20px; max-width: 560px;
+      font-size: clamp(1rem, 2.5vw, 1.2rem); font-weight: 300; line-height: 1.7; color: #b0c8e0;
+      animation: fadeUp 0.7s 0.2s ease both;
+    }
+    .hero-btns { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; animation: fadeUp 0.7s 0.3s ease both; }
+    .btn-red {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--red); color: #fff; font-weight: 800; font-size: 1.1rem; letter-spacing: 1px;
+      padding: 16px 36px; border-radius: 6px; text-decoration: none;
+      box-shadow: 0 4px 24px rgba(224,32,32,0.45); transition: background .2s, transform .15s;
+    }
+    .btn-red:hover { background: var(--dark-red); transform: translateY(-2px); }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 10px;
+      border: 2px solid rgba(255,255,255,0.3); color: #fff;
+      font-weight: 700; font-size: 1rem; padding: 16px 32px; border-radius: 6px; text-decoration: none;
+      transition: border-color .2s, background .2s;
+    }
+    .btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+
+    /* STATS */
+    .stats { background: var(--steel); display: flex; flex-wrap: wrap; }
+    .stat { flex: 1 1 140px; text-align: center; padding: 30px 16px; border-right: 1px solid rgba(255,255,255,0.07); }
+    .stat:last-child { border-right: none; }
+    .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; color: var(--red); }
+    .stat-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 2px; color: #6a8aaa; margin-top: 6px; }
+
+    /* SERVICES */
+    .section { padding: 80px 20px; }
+    .sec-label { text-align: center; font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; color: var(--red); margin-bottom: 10px; }
+    .sec-title { text-align: center; font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem,5vw,3rem); letter-spacing: 2px; margin-bottom: 48px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 24px; max-width: 1100px; margin: 0 auto; }
+    .card {
+      background: var(--steel); border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 8px; padding: 32px 24px;
+      transition: transform .2s, box-shadow .2s; position: relative; overflow: hidden;
+    }
+    .card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform .3s;
+    }
+    .card:hover::before { transform: scaleX(1); }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,0.5); }
+    .card-icon { font-size: 2.2rem; margin-bottom: 16px; }
+    .card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 1px; margin-bottom: 10px; }
+    .card p { font-size: 0.88rem; color: #6a8aaa; line-height: 1.65; }
+
+    /* WHY */
+    .why { background: var(--steel); }
+    .why-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 48px; align-items: center; }
+    .why h2 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.8rem,4vw,2.8rem); letter-spacing: 2px; margin-bottom: 18px; }
+    .why p { color: #b0c8e0; line-height: 1.7; }
+    .checks { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .checks li { display: flex; align-items: flex-start; gap: 12px; font-size: .95rem; color: #b0c8e0; }
+    .checks li::before { content: '✔'; color: var(--gold); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+
+    /* CONTACT */
+    .contact { text-align: center; }
+    .phone-btn {
+      display: inline-flex; align-items: center; gap: 18px;
+      background: var(--red); color: #fff; border-radius: 8px; padding: 24px 48px;
+      text-decoration: none; box-shadow: 0 6px 32px rgba(224,32,32,0.45);
+      transition: background .2s, transform .15s; margin: 32px auto;
+    }
+    .phone-btn:hover { background: var(--dark-red); transform: scale(1.03); }
+    .phone-btn .ph-icon { font-size: 2rem; }
+    .phone-btn .ph-num { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.6rem,5vw,2.5rem); letter-spacing: 3px; }
+    .info-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 28px; margin-top: 10px; }
+    .info-item { font-size: .9rem; color: #6a8aaa; display: flex; align-items: center; gap: 8px; }
+    .info-item strong { color: #fff; }
+
+    /* FOOTER */
+    footer { background: #060e1a; text-align: center; padding: 28px 20px; font-size: .78rem; color: #3a5068; }
+    footer p + p { margin-top: 6px; }
+
+    /* FAB */
+    .fab {
+      position: fixed; bottom: 24px; right: 20px; z-index: 998;
+      background: var(--red); color: #fff;
+      width: 62px; height: 62px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.7rem; text-decoration: none;
+      box-shadow: 0 4px 20px rgba(224,32,32,0.6);
+      animation: pulse 1.5s infinite;
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="pulse"></div>
+  <a href="tel:05524628251">📞 7/24 ACİL TESİSAT – 0552 462 82 51</a>
+</div>
+
+<div class="hero">
+  <div class="badge">🔧 İstanbul Geneli – 7/24 Hizmet</div>
+  <h1>İSTANBUL <span>TESİSAT</span></h1>
+  <p>Su tesisatı, tıkanıklık açma, kombi arızası, kaçak tespiti.<br/><strong style="color:#fff">Aynı gün hizmet garantisi.</strong></p>
+  <div class="hero-btns">
+    <a href="tel:05524628251" class="btn-red">📞 Hemen Ara: 0552 462 82 51</a>
+    <a href="#hizmetler" class="btn-outline">Hizmetler ↓</a>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="stat-num">7/24</div><div class="stat-label">Acil Servis</div></div>
+  <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Yıl Deneyim</div></div>
+  <div class="stat"><div class="stat-num">5000+</div><div class="stat-label">Mutlu Müşteri</div></div>
+  <div class="stat"><div class="stat-num">30 dk</div><div class="stat-label">Ortalama Varış</div></div>
+</div>
+
+<div class="section" id="hizmetler">
+  <div class="sec-label">Ne Yapıyoruz?</div>
+  <h2 class="sec-title">HİZMETLERİMİZ</h2>
+  <div class="grid">
+    <div class="card"><div class="card-icon">💧</div><h3>Su Tesisatı</h3><p>Boru döşeme, değiştirme, su basıncı sorunları ve tesisat yenileme.</p></div>
+    <div class="card"><div class="card-icon">🚿</div><h3>Tıkanıklık Açma</h3><p>Lavabo, banyo, mutfak ve pis su borusu tıkanıklıklarını hızla çözeriz.</p></div>
+    <div class="card"><div class="card-icon">🔍</div><h3>Kaçak Tespiti</h3><p>Gizli su kaçakları; duvar, zemin ve tavan borularını hasarsız tespit ederiz.</p></div>
+    <div class="card"><div class="card-icon">🔥</div><h3>Kombi & Doğalgaz</h3><p>Kombi arızası, bakım, petek temizleme ve radyatör havalandırma.</p></div>
+    <div class="card"><div class="card-icon">🚽</div><h3>Klozet & Tuvalet</h3><p>Sifon, rezervuar arızaları ve tuvalet değişim montaj işlemleri.</p></div>
+    <div class="card"><div class="card-icon">🏗️</div><h3>Tadilat Tesisatı</h3><p>Yeni daire ve ofis tadilat projelerinde komple tesisat kurulumu.</p></div>
+  </div>
+</div>
+
+
+
+<div class="section contact" id="iletisim">
+  <div class="sec-label">Bize Ulaşın</div>
+  <h2 class="sec-title">HEMEN ARAYIN</h2>
+  <p style="color:#6a8aaa">Acil durumlarda 7/24 yanınızdayız.</p>
+  <a href="tel:05524628251" class="phone-btn">
+    <span class="ph-icon">📞</span>
+    <span class="ph-num">0552 462 82 51</span>
+  </a>
+  <div class="info-row">
+    <div class="info-item">📍 <strong>İstanbul – Tüm ilçeler</strong></div>
+    <div class="info-item">🕐 <strong>7/24 Açık</strong></div>
+    <div class="info-item">⚡ <strong>30 dk içinde ulaşım</strong></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 İstanbul Tesisat – Tüm hakları saklıdır.</p>
+  <p>📞 0552 462 82 51 &nbsp;|&nbsp; İstanbul, Türkiye</p>
+</footer>
+
+<a class="fab" href="tel:05524628251">📞</a>
+
+</body>
+</html>
