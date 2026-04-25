@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="İstanbul Tesisat – 7/24 acil su tesisatı, tıkanıklık açma, kaçak tespiti. Hemen arayın: 0552 462 82 51"/>
+  <title>İstanbul Tesisat – 7/24 Acil Servis | 0552 462 82 51</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600;700;900&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --red: #e02020; --dark-red: #a80000; --navy: #0b1a2e; --steel: #1c2f45; --gold: #f5a623; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Barlow', sans-serif; background: var(--navy); color: #fff; overflow-x: hidden; }
+
+    .topbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      background: var(--red); display: flex; align-items: center; justify-content: center; gap: 12px;
+      padding: 11px 20px; box-shadow: 0 2px 16px rgba(0,0,0,0.5);
+    }
+    .topbar a { color: #fff; text-decoration: none; font-weight: 800; font-size: 1.05rem; letter-spacing: 1px; display: flex; align-items: center; gap: 10px; }
+    .pulse { width: 10px; height: 10px; background: #fff; border-radius: 50%; animation: pulse 1.5s infinite; }
+    @keyframes pulse { 0%,100%{ box-shadow: 0 0 0 0 rgba(255,255,255,0.7); } 50%{ box-shadow: 0 0 0 8px rgba(255,255,255,0); } }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+    .hero {
+      min-height: 100vh; padding-top: 56px;
+      background: linear-gradient(160deg, rgba(11,26,46,0.93) 50%, rgba(224,32,32,0.2) 100%),
+        url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&q=80') center/cover no-repeat;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 80px 20px 100px; position: relative;
+    }
+    .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom, transparent, var(--navy)); }
+    .badge { display: inline-block; background: var(--red); color: #fff; font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; padding: 6px 18px; border-radius: 3px; margin-bottom: 24px; animation: fadeUp 0.6s ease both; }
+    .hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 11vw, 7rem); line-height: 1; letter-spacing: 2px; animation: fadeUp 0.7s 0.1s ease both; }
+    .hero h1 span { color: var(--red); }
+    .hero p { margin-top: 20px; max-width: 560px; font-size: clamp(1rem, 2.5vw, 1.2rem); font-weight: 300; line-height: 1.7; color: #b0c8e0; animation: fadeUp 0.7s 0.2s ease both; }
+    .hero-btns { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; animation: fadeUp 0.7s 0.3s ease both; }
+    .btn-red { display: inline-flex; align-items: center; gap: 10px; background: var(--red); color: #fff; font-weight: 800; font-size: 1.1rem; letter-spacing: 1px; padding: 16px 36px; border-radius: 6px; text-decoration: none; box-shadow: 0 4px 24px rgba(224,32,32,0.45); transition: background .2s, transform .15s; }
+    .btn-red:hover { background: var(--dark-red); transform: translateY(-2px); }
+    .btn-wa { display: inline-flex; align-items: center; gap: 10px; background: #25D366; color: #fff; font-weight: 800; font-size: 1.1rem; letter-spacing: 1px; padding: 16px 36px; border-radius: 6px; text-decoration: none; box-shadow: 0 4px 24px rgba(37,211,102,0.45); transition: background .2s, transform .15s; }
+    .btn-wa:hover { background: #1da851; transform: translateY(-2px); }
+    .btn-outline { display: inline-flex; align-items: center; gap: 10px; border: 2px solid rgba(255,255,255,0.3); color: #fff; font-weight: 700; font-size: 1rem; padding: 16px 32px; border-radius: 6px; text-decoration: none; transition: border-color .2s; }
+    .btn-outline:hover { border-color: #fff; }
+
+    .stats { background: var(--steel); display: flex; flex-wrap: wrap; }
+    .stat { flex: 1 1 140px; text-align: center; padding: 30px 16px; border-right: 1px solid rgba(255,255,255,0.07); }
+    .stat:last-child { border-right: none; }
+    .stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.4rem; color: var(--red); }
+    .stat-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 2px; color: #6a8aaa; margin-top: 6px; }
+
+    .section { padding: 80px 20px; }
+    .sec-label { text-align: center; font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; color: var(--red); margin-bottom: 10px; }
+    .sec-title { text-align: center; font-family: 'Bebas Neue', sans-serif; font-size: clamp(2rem,5vw,3rem); letter-spacing: 2px; margin-bottom: 48px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 24px; max-width: 1100px; margin: 0 auto; }
+    .card { background: var(--steel); border: 1px solid rgba(255,255,255,0.07); border-radius: 8px; padding: 32px 24px; transition: transform .2s, box-shadow .2s; position: relative; overflow: hidden; }
+    .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
+    .card:hover::before { transform: scaleX(1); }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,0.5); }
+    .card-icon { font-size: 2.2rem; margin-bottom: 16px; }
+    .card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 1px; margin-bottom: 10px; }
+    .card p { font-size: 0.88rem; color: #6a8aaa; line-height: 1.65; }
+
+    .bolgeler { background: var(--steel); padding: 80px 20px; }
+    .ilce-grid { display: flex; flex-wrap: wrap; gap: 10px; max-width: 1100px; margin: 0 auto; justify-content: center; }
+    .ilce-tag { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: #b0c8e0; font-size: 0.82rem; padding: 6px 14px; border-radius: 20px; transition: background .2s, color .2s; cursor: default; }
+    .ilce-tag:hover { background: var(--red); color: #fff; }
+
+    .contact { text-align: center; }
+    .phone-btn { display: inline-flex; align-items: center; gap: 18px; background: var(--red); color: #fff; border-radius: 8px; padding: 24px 48px; text-decoration: none; box-shadow: 0 6px 32px rgba(224,32,32,0.45); transition: background .2s, transform .15s; margin: 20px 10px; }
+    .phone-btn:hover { background: var(--dark-red); transform: scale(1.03); }
+    .wa-btn { display: inline-flex; align-items: center; gap: 18px; background: #25D366; color: #fff; border-radius: 8px; padding: 24px 48px; text-decoration: none; box-shadow: 0 6px 32px rgba(37,211,102,0.45); transition: background .2s, transform .15s; margin: 20px 10px; }
+    .wa-btn:hover { background: #1da851; transform: scale(1.03); }
+    .ph-icon { font-size: 2rem; }
+    .ph-num { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.6rem,5vw,2.5rem); letter-spacing: 3px; }
+    .info-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 28px; margin-top: 20px; }
+    .info-item { font-size: .9rem; color: #6a8aaa; display: flex; align-items: center; gap: 8px; }
+    .info-item strong { color: #fff; }
+
+    footer { background: #060e1a; text-align: center; padding: 28px 20px; font-size: .78rem; color: #3a5068; }
+    footer p + p { margin-top: 6px; }
+
+    .fab { position: fixed; right: 20px; z-index: 998; width: 62px; height: 62px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.7rem; text-decoration: none; box-shadow: 0 4px 20px rgba(0,0,0,0.4); animation: pulse 1.5s infinite; }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="pulse"></div>
+  <a href="tel:05524628251">📞 7/24 ACİL TESİSAT – 0552 462 82 51</a>
+</div>
+
+<div class="hero">
+  <div class="badge">🔧 İstanbul Geneli – 7/24 Hizmet</div>
+  <h1>İSTANBUL <span>TESİSAT</span></h1>
+  <p>Su tesisatı, tıkanıklık açma, kombi arızası, kaçak tespiti.<br/><strong style="color:#fff">Aynı gün hizmet garantisi.</strong></p>
+  <div class="hero-btns">
+    <a href="tel:05524628251" class="btn-red">📞 Hemen Ara: 0552 462 82 51</a>
+    <a href="https://wa.me/905524628251" class="btn-wa" target="_blank">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a>
+    <a href="#hizmetler" class="btn-outline">Hizmetler ↓</a>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat"><div class="stat-num">7/24</div><div class="stat-label">Acil Servis</div></div>
+  <div class="stat"><div class="stat-num">10+</div><div class="stat-label">Yıl Deneyim</div></div>
+  <div class="stat"><div class="stat-num">5000+</div><div class="stat-label">Mutlu Müşteri</div></div>
+  <div class="stat"><div class="stat-num">30 dk</div><div class="stat-label">Ortalama Varış</div></div>
+</div>
+
+<div class="section" id="hizmetler">
+  <div class="sec-label">Ne Yapıyoruz?</div>
+  <h2 class="sec-title">HİZMETLERİMİZ</h2>
+  <div class="grid">
+    <div class="card"><div class="card-icon">💧</div><h3>Su Tesisatı</h3><p>Boru döşeme, değiştirme, su basıncı sorunları ve tesisat yenileme.</p></div>
+    <div class="card"><div class="card-icon">🚿</div><h3>Tıkanıklık Açma</h3><p>Lavabo, banyo, mutfak ve pis su borusu tıkanıklıklarını hızla çözeriz.</p></div>
+    <div class="card"><div class="card-icon">🔍</div><h3>Kaçak Tespiti</h3><p>Gizli su kaçakları; duvar, zemin ve tavan borularını hasarsız tespit ederiz.</p></div>
+    <div class="card"><div class="card-icon">🔥</div><h3>Kombi & Doğalgaz</h3><p>Kombi arızası, bakım, petek temizleme ve radyatör havalandırma.</p></div>
+    <div class="card"><div class="card-icon">🚽</div><h3>Klozet & Tuvalet</h3><p>Sifon, rezervuar arızaları ve tuvalet değişim montaj işlemleri.</p></div>
+    <div class="card"><div class="card-icon">🏗️</div><h3>Tadilat Tesisatı</h3><p>Yeni daire ve ofis tadilat projelerinde komple tesisat kurulumu.</p></div>
+  </div>
+</div>
+
+<div class="bolgeler" id="bolgeler">
+  <div class="sec-label">Hizmet Bölgelerimiz</div>
+  <h2 class="sec-title">İSTANBUL'UN HER YERİNDEYİZ</h2>
+  <div class="ilce-grid">
+    <span class="ilce-tag">Adalar</span><span class="ilce-tag">Arnavutköy</span><span class="ilce-tag">Ataşehir</span><span class="ilce-tag">Avcılar</span><span class="ilce-tag">Bağcılar</span><span class="ilce-tag">Bahçelievler</span><span class="ilce-tag">Bakırköy</span><span class="ilce-tag">Başakşehir</span><span class="ilce-tag">Bayrampaşa</span><span class="ilce-tag">Beşiktaş</span><span class="ilce-tag">Beykoz</span><span class="ilce-tag">Beylikdüzü</span><span class="ilce-tag">Beyoğlu</span><span class="ilce-tag">Büyükçekmece</span><span class="ilce-tag">Çatalca</span><span class="ilce-tag">Çekmeköy</span><span class="ilce-tag">Esenler</span><span class="ilce-tag">Esenyurt</span><span class="ilce-tag">Eyüpsultan</span><span class="ilce-tag">Fatih</span><span class="ilce-tag">Gaziosmanpaşa</span><span class="ilce-tag">Güngören</span><span class="ilce-tag">Kadıköy</span><span class="ilce-tag">Kağıthane</span><span class="ilce-tag">Kartal</span><span class="ilce-tag">Küçükçekmece</span><span class="ilce-tag">Maltepe</span><span class="ilce-tag">Pendik</span><span class="ilce-tag">Sancaktepe</span><span class="ilce-tag">Sarıyer</span><span class="ilce-tag">Silivri</span><span class="ilce-tag">Sultanbeyli</span><span class="ilce-tag">Sultangazi</span><span class="ilce-tag">Şile</span><span class="ilce-tag">Şişli</span><span class="ilce-tag">Tuzla</span><span class="ilce-tag">Ümraniye</span><span class="ilce-tag">Üsküdar</span><span class="ilce-tag">Zeytinburnu</span>
+    <span class="ilce-tag">Aksaray</span><span class="ilce-tag">Bağlarbaşı</span><span class="ilce-tag">Bahçeşehir</span><span class="ilce-tag">Bostancı</span><span class="ilce-tag">Caddebostan</span><span class="ilce-tag">Erenköy</span><span class="ilce-tag">Etiler</span><span class="ilce-tag">Fenerbahçe</span><span class="ilce-tag">Florya</span><span class="ilce-tag">Göztepe</span><span class="ilce-tag">Hasanpaşa</span><span class="ilce-tag">İkitelli</span><span class="ilce-tag">Kabataş</span><span class="ilce-tag">Kalamış</span><span class="ilce-tag">Kapalıçarşı</span><span class="ilce-tag">Kayışdağı</span><span class="ilce-tag">Kozyatağı</span><span class="ilce-tag">Levent</span><span class="ilce-tag">Maslak</span><span class="ilce-tag">Mecidiyeköy</span><span class="ilce-tag">Merter</span><span class="ilce-tag">Moda</span><span class="ilce-tag">Nişantaşı</span><span class="ilce-tag">Ortaköy</span><span class="ilce-tag">Pendik</span><span class="ilce-tag">Rumeli Hisarı</span><span class="ilce-tag">Suadiye</span><span class="ilce-tag">Taksim</span><span class="ilce-tag">Topkapı</span><span class="ilce-tag">Yeşilköy</span><span class="ilce-tag">Yıldız</span><span class="ilce-tag">Zekeriyaköy</span>
+  </div>
+</div>
+
+<div class="section contact" id="iletisim">
+  <div class="sec-label">Bize Ulaşın</div>
+  <h2 class="sec-title">HEMEN ARAYIN VEYA YAZIN</h2>
+  <p style="color:#6a8aaa">Acil durumlarda 7/24 yanınızdayız.</p>
+  <div style="display:flex;flex-wrap:wrap;justify-content:center">
+    <a href="tel:05524628251" class="phone-btn">
+      <span class="ph-icon">📞</span>
+      <span class="ph-num">0552 462 82 51</span>
+    </a>
+    <a href="https://wa.me/905524628251" class="wa-btn" target="_blank">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      <span class="ph-num">WhatsApp</span>
+    </a>
+  </div>
+  <div class="info-row">
+    <div class="info-item">📍 <strong>İstanbul – Tüm ilçeler</strong></div>
+    <div class="info-item">🕐 <strong>7/24 Açık</strong></div>
+    <div class="info-item">⚡ <strong>30 dk içinde ulaşım</strong></div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 İstanbul Tesisat – Tüm hakları saklıdır.</p>
+  <p>📞 0552 462 82 51 &nbsp;|&nbsp; İstanbul, Türkiye</p>
+</footer>
+
+<a class="fab" href="tel:05524628251" style="bottom:100px;background:#e02020">📞</a>
+<a class="fab" href="https://wa.me/905524628251" target="_blank" style="bottom:24px;background:#25D366">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+</body>
+</html>
