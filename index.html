@@ -9,10 +9,12 @@
     <style>
         :root { --primary: #0a4d68; --secondary: #083344; --accent: #e63946; --success: #25D366; --light: #f5f5f5; }
         body { margin:0; font-family: 'Segoe UI', Arial, sans-serif; background: var(--light); color: #333; line-height: 1.6; }
-        header { background: var(--primary); color: white; padding: 30px 20px; text-align: center; }
+        header { background: var(--primary); color: white; padding: 20px; text-align: center; }
         nav { background: var(--secondary); padding: 12px; text-align: center; position: sticky; top: 0; z-index: 100; }
         nav a { color: white; margin: 0 10px; text-decoration: none; font-weight: bold; font-size: 0.9rem; }
         .container { max-width: 900px; margin: auto; padding: 20px; }
+        .hero-section { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 20px; text-align: center; overflow: hidden; }
+        .hero-image { width: 100%; height: auto; max-width: 600px; border-radius: 10px; margin-bottom: 20px; }
         .card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); margin-bottom: 20px; border-left: 5px solid var(--primary); }
         .btn { padding: 15px 25px; color: white; border-radius: 50px; text-decoration: none; display: inline-block; margin: 10px; font-weight: bold; }
         .call { background: var(--accent); }
@@ -37,7 +39,8 @@
 </nav>
 
 <div class="container">
-    <section class="card" style="text-align: center;">
+    <section class="hero-section">
+        <img src="usta.jpg" alt="İstanbul Tesisatçı Usta" class="hero-image">
         <h2>Profesyonel Tesisat Çözümleri</h2>
         <p>Kırmadan su kaçağı tespiti ve robotla tıkanıklık açma işlemlerinde İstanbul'un her yerindeyiz.</p>
         <a href="tel:05524628251" class="btn call">📞 Hemen Ara</a>
