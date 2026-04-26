@@ -1,72 +1,162 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="İstanbul Tesisat – 7/24 acil su tesisatı, tıkanıklık açma, kaçak tespiti. Hemen arayın: 0552 462 82 51"/>
-  <title>İstanbul Tesisat – 7/24 Acil Servis | 0552 462 82 51</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;600;700;900&display=swap" rel="stylesheet"/>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --red: #e02020; --dark-red: #a80000; --navy: #0b1a2e; --steel: #1c2f45; --gold: #f5a623; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Barlow', sans-serif; background: var(--navy); color: #fff; overflow-x: hidden; line-height: 1.6; }
-    .topbar { position: fixed; top: 0; left: 0; right: 0; z-index: 999; background: var(--red); display: flex; align-items: center; justify-content: center; padding: 11px 20px; box-shadow: 0 2px 16px rgba(0,0,0,0.5); }
-    .topbar a { color: #fff; text-decoration: none; font-weight: 800; font-size: 1.05rem; }
-    .hero { min-height: 100vh; padding-top: 56px; background: linear-gradient(160deg, rgba(11,26,46,0.93) 50%, rgba(224,32,32,0.2) 100%), url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&q=80') center/cover no-repeat; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 80px 20px; }
-    .badge { background: var(--red); color: #fff; font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 6px 18px; border-radius: 3px; margin-bottom: 20px; }
-    .hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3rem, 10vw, 6rem); line-height: 1; margin-bottom: 15px; }
-    .hero h1 span { color: var(--red); }
-    .hero p { max-width: 600px; font-size: 1.2rem; color: #b0c8e0; margin-bottom: 30px; }
-    .hero-btns { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
-    .btn { padding: 16px 32px; border-radius: 6px; text-decoration: none; font-weight: 800; font-size: 1.1rem; transition: 0.3s; }
-    .btn-red { background: var(--red); color: white; box-shadow: 0 4px 20px rgba(224,32,32,0.4); }
-    .btn-wa { background: #25D366; color: white; box-shadow: 0 4px 20px rgba(37,211,102,0.4); }
-    .section { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
-    .sec-title { font-family: 'Bebas Neue', sans-serif; font-size: 3rem; text-align: center; color: var(--red); margin-bottom: 40px; letter-spacing: 2px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
-    .card { background: var(--steel); padding: 30px; border-radius: 10px; border-left: 5px solid var(--red); }
-    .card h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; margin-bottom: 10px; }
-    .card p { color: #8892b0; font-size: 0.95rem; }
-    .bolgeler { background: #060e1a; padding: 60px 5%; text-align: center; }
-    .ilce-grid { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 30px; }
-    .tag { background: var(--steel); color: #ccd6f6; padding: 8px 15px; border-radius: 20px; font-size: 0.85rem; }
-    .fix-bar { position: fixed; bottom: 0; left: 0; width: 100%; display: grid; grid-template-columns: 1fr 1fr; z-index: 1000; }
-    .fix-btn { padding: 18px; text-align: center; color: white; text-decoration: none; font-weight: 800; font-size: 1.1rem; }
-    footer { padding: 40px; text-align: center; background: #040a13; color: #495670; font-size: 0.9rem; }
-    @media (min-width: 768px) { .fix-bar { display: none; } }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sıhhi Tesisat Tamirat | 0552 462 82 51</title>
+    
+    <meta name="description" content="Sıhhi tesisat tamirat, su kaçağı tespiti, tıkanıklık açma hizmetleri. 7/24 hizmet için hemen arayın: 0552 462 82 51">
+    <meta name="keywords" content="tesisatçı, sıhhi tesisat, su kaçağı, gider açma, tesisat tamiri">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #0a4d68;
+            --secondary: #083344;
+            --accent: #e63946;
+            --success: #25D366;
+            --light: #f5f5f5;
+        }
+
+        body { margin:0; font-family: 'Segoe UI', Arial, sans-serif; background: var(--light); color: #333; line-height: 1.6; }
+        
+        header { background: var(--primary); color: white; padding: 40px 20px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        header h1 { margin: 0; font-size: 2.5rem; }
+        header p { margin: 10px 0 0; opacity: 0.9; font-size: 1.2rem; }
+
+        nav { background: var(--secondary); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 100; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+        nav a:hover { color: var(--accent); }
+
+        .container { max-width: 800px; margin: auto; padding: 20px; }
+        
+        h1, h2 { color: var(--primary); border-bottom: 2px solid var(--primary); padding-bottom: 10px; }
+
+        .action-buttons { text-align: center; margin: 30px 0; }
+        .btn {
+            padding: 15px 30px;
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.2s;
+        }
+        .btn:active { transform: scale(0.95); }
+        .call { background: var(--accent); }
+        .whatsapp { background: var(--success); }
+
+        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 20px 0; }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            border-left: 5px solid var(--primary);
+        }
+        .card i { color: var(--success); margin-right: 15px; font-size: 1.2rem; }
+
+        .contact-form { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+        input, textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
+        button { padding: 15px; background: var(--primary); color: white; border: none; width: 100%; border-radius: 8px; cursor: pointer; font-size: 1rem; font-weight: bold; }
+        button:hover { background: var(--secondary); }
+
+        footer { background: #222; color: white; text-align: center; padding: 30px; margin-top: 40px; }
+        
+        .whatsapp-fixed {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: var(--success);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+            .btn { width: 100%; box-sizing: border-box; margin: 5px 0; }
+        }
+    </style>
 </head>
+
 <body>
-<div class="topbar"><a href="tel:05524628251">📞 7/24 ACİL TESİSAT: 0552 462 82 51</a></div>
-<section class="hero">
-  <div class="badge">İstanbul Geneli 30 Dakikada Servis</div>
-  <h1>İSTANBUL <span>TESİSAT</span></h1>
-  <p>Su kaçağı tespiti, tıkanıklık açma ve tüm sıhhi tesisat işlerinizde profesyonel çözümler.</p>
-  <div class="hero-btns">
-    <a href="tel:05524628251" class="btn btn-red">📞 HEMEN ARA</a>
-    <a href="https://wa.me/905524628251" class="btn btn-wa">💬 WHATSAPP</a>
-  </div>
-</section>
-<section class="section" id="hizmetler">
-  <h2 class="sec-title">HİZMETLERİMİZ</h2>
-  <div class="grid">
-    <div class="card"><h3>Cihazla Kaçak Tespiti</h3><p>Kırmadan, dökmeden termal kamera ve akustik dinleme ile su kaçağını noktasal buluyoruz.</p></div>
-    <div class="card"><h3>Robotla Tıkanıklık Açma</h3><p>Mutfak, banyo ve tuvalet giderlerini robot makinelerle pimaşlara zarar vermeden açıyoruz.</p></div>
-    <div class="card"><h3>Petek Temizliği</h3><p>Özel ilaçlı makineler ile peteklerinizi temizliyor, ısı verimini %30 artırıyoruz.</p></div>
-    <div class="card"><h3>Sıhhi Tesisat Tamiri</h3><p>Musluk, klozet, batarya değişimi ve tüm iç-dış tesisat yenileme işlemlerini yapıyoruz.</p></div>
-  </div>
-</section>
-<section class="bolgeler">
-  <h2 class="sec-title">HİZMET BÖLGELERİMİZ</h2>
-  <div class="ilce-grid">
-    <span class="tag">Esenyurt</span><span class="tag">Bağcılar</span><span class="tag">Küçükçekmece</span><span class="tag">Ümraniye</span><span class="tag">Pendik</span><span class="tag">Bahçelievler</span><span class="tag">Üsküdar</span><span class="tag">Sultangazi</span><span class="tag">Gaziosmanpaşa</span><span class="tag">Maltepe</span><span class="tag">Kartal</span><span class="tag">Esenler</span><span class="tag">Kadıköy</span><span class="tag">Kağıthane</span><span class="tag">Avcılar</span><span class="tag">Ataşehir</span><span class="tag">Fatih</span><span class="tag">Eyüpsultan</span><span class="tag">Sarıyer</span><span class="tag">Beylikdüzü</span><span class="tag">Sultanbeyli</span><span class="tag">Güngören</span><span class="tag">Zeytinburnu</span><span class="tag">Şişli</span><span class="tag">Bayrampaşa</span><span class="tag">Arnavutköy</span><span class="tag">Tuzla</span><span class="tag">Çekmeköy</span><span class="tag">Büyükçekmece</span><span class="tag">Beykoz</span><span class="tag">Beyoğlu</span><span class="tag">Bakırköy</span><span class="tag">Beşiktaş</span><span class="tag">Silivri</span><span class="tag">Çatalca</span><span class="tag">Şile</span><span class="tag">Adalar</span>
-  </div>
-</section>
-<footer><p>© 2025 İstanbul Tesisat - Tüm Hakları Saklıdır.</p><p>7/24 Destek: 0552 462 82 51</p></footer>
-<div class="fix-bar">
-  <a href="tel:05524628251" class="fix-btn" style="background: var(--red);">📞 ARA</a>
-  <a href="https://wa.me/905524628251" class="fix-btn" style="background: #25D366;">💬 WHATSAPP</a>
+
+<header>
+    <h1>Sıhhi Tesisat Tamirat</h1>
+    <p><i class="fas fa-tools"></i> Hızlı - Güvenilir - 7/24 Hizmet</p>
+</header>
+
+<nav>
+    <a href="#hizmetler">Hizmetler</a>
+    <a href="#hakkimizda">Neden Biz?</a>
+    <a href="#iletisim">İletişim</a>
+</nav>
+
+<div class="container">
+
+    <section style="text-align: center; margin-bottom: 40px;">
+        <h2>0552 462 82 51 Tesisatçı Hizmeti</h2>
+        <p>Su kaçağı, tıkanıklık ve tüm sıhhi tesisat sorunlarını hızlı ve garantili çözüyoruz. Profesyonel ekip ve uygun fiyat ile hizmetinizdeyiz.</p>
+        
+        <div class="action-buttons">
+            <a href="tel:05524628251" class="btn call"><i class="fas fa-phone"></i> Hemen Ara</a>
+            <a href="https://wa.me/905524628251" class="btn whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        </div>
+    </section>
+
+    <h2 id="hizmetler">Hizmetlerimiz</h2>
+    <div class="card-grid">
+        <div class="card"><i class="fas fa-check-circle"></i> Su Kaçağı Tespiti (Kırmadan)</div>
+        <div class="card"><i class="fas fa-check-circle"></i> Tıkalı Gider Açma</div>
+        <div class="card"><i class="fas fa-check-circle"></i> Musluk & Batarya Tamiri</div>
+        <div class="card"><i class="fas fa-check-circle"></i> Klozet ve Lavabo Tamiri</div>
+        <div class="card"><i class="fas fa-check-circle"></i> Kombi Tesisatı</div>
+    </div>
+
+    <h2 id="hakkimizda">Neden Biz?</h2>
+    <div class="card-grid">
+        <div class="card"><i class="fas fa-clock"></i> 7/24 Acil Servis</div>
+        <div class="card"><i class="fas fa-lira-sign"></i> Uygun Fiyat</div>
+        <div class="card"><i class="fas fa-user-shield"></i> Deneyimli Usta</div>
+        <div class="card"><i class="fas fa-bolt"></i> Hızlı Müdahale</div>
+    </div>
+
+    <h2 id="iletisim">Bize Ulaşın</h2>
+    <div class="contact-form">
+        <form>
+            <input type="text" placeholder="Adınız" required>
+            <input type="tel" placeholder="Telefon Numaranız" required>
+            <textarea placeholder="Sorununuz nedir?" rows="4" required></textarea>
+            <button type="submit">Mesaj Gönder</button>
+        </form>
+    </div>
+
 </div>
+
+<footer>
+    <p>© 2026 Sıhhi Tesisat Tamirat | Tüm Hakları Saklıdır.</p>
+    <p><i class="fas fa-phone"></i> 0552 462 82 51</p>
+</footer>
+
+<a href="https://wa.me/905524628251" class="whatsapp-fixed">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
 </body>
-</html>
+      </html>
+  
